@@ -33,13 +33,13 @@ class _MainScreenState extends State<MainScreen> {
                       height: MediaQuery.of(context).size.height * 0.2,
                     ),
                    WidgetClimate(
-                      Meteocons.cloud,
+                      Meteocons.cloud_sun,
                       '${data?.temperatura}',
                       'Uberlândia',
                       '${data?.descricao}',
                     ),
                     SizedBox(height: MediaQuery.of(context).size.height * 0.3,),
-                    widgetTable('32', '23', Meteocons.sun, Meteocons.moon)
+                    widgetTable('${data?.tempDia}', '${data?.tempNoite}', Meteocons.sun, Meteocons.moon)
                   ],
                 );
               } else {}
