@@ -1,6 +1,7 @@
 import 'package:clima_app/model/modelClimate.dart';
 import 'package:clima_app/services/climateAPI.dart';
 import 'package:clima_app/widget/widgetClimate.dart';
+import 'package:clima_app/widget/widgetTable.dart';
 import 'package:fluttericon/meteocons_icons.dart';
 import 'package:flutter/material.dart';
 
@@ -12,38 +13,37 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  ClimateAPI climateAPI = ClimateAPI(); 
+  ClimateAPI climateAPI = ClimateAPI();
   Climate? data;
 
-  Future<void> getData () async {
+  Future<void> getData() async {
     await climateAPI.getCurrentClimate();
-  }
-
- @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:FutureBuilder(
-        future: getData(),
-        builder: (ctx, snapshot){
-          if(snapshot.connectionState == ConnectionState.done){
-
-            return Column(
-        children: [
-          SizedBox(height: MediaQuery.of(context).size.height * 0.3,),
-           WidgetClimate( Meteocons.cloud, '${data?.temperatura}', 'Uberlândia', '${data?.descricao}')
-        ],
-      );
-
-          }else{}
-          return Container();
-        }
-      )
-      );
+        body: FutureBuilder(
+            future: getData(),
+            builder: (ctx, snapshot) {
+              if (snapshot.connectionState == ConnectionState.done) {
+                return Column(
+                  children: [
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.2,
+                    ),
+                   WidgetClimate(
+                      Meteocons.cloud,
+                      '${data?.temperatura}',
+                      'Uberlândia',
+                      '${data?.descricao}',
+                    ),
+                    SizedBox(height: MediaQuery.of(context).size.height * 0.3,),
+                    widgetTable('32', '23', Meteocons.sun, Meteocons.moon)
+                  ],
+                );
+              } else {}
+              return Container();
+            }));
   }
 }

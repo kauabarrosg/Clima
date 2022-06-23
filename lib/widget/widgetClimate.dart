@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 Widget WidgetClimate(
     IconData icon, String temperatura, String local, String descricao) {
@@ -9,6 +10,7 @@ Widget WidgetClimate(
         local,
         style: const TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
       ),
+      Text(DateFormat.MMMd().format(DateTime.now())),
       SizedBox(height: 30),
       Icon(
         icon,
