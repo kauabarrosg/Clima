@@ -14,16 +14,23 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   ClimateAPI climateAPI = ClimateAPI();
-  Climate? data;
+
+  //erro: data esta com valor null
+  Climate? climate;
 
   Future<void> getData() async {
     await climateAPI.getCurrentClimate();
+
   }
 
   @override
   Widget build(BuildContext context) {
+    print(climate);
     return Scaffold(
-        body: FutureBuilder(
+        body: SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.only(bottom: 12),
+        child: FutureBuilder(
             future: getData(),
             builder: (ctx, snapshot) {
               if (snapshot.connectionState == ConnectionState.done) {
@@ -32,18 +39,26 @@ class _MainScreenState extends State<MainScreen> {
                     SizedBox(
                       height: MediaQuery.of(context).size.height * 0.2,
                     ),
-                   WidgetClimate(
+                    WidgetClimate(
                       Meteocons.cloud_sun,
-                      '${data?.temperatura}',
+                      '${climate?.temperatura}',
                       'Uberlândia',
-                      '${data?.descricao}',
                     ),
-                    SizedBox(height: MediaQuery.of(context).size.height * 0.3,),
-                    widgetTable('${data?.tempDia}', '${data?.tempNoite}', Meteocons.sun, Meteocons.moon)
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.3,
+                    ),
+                    widgetTable(
+                      '${climate?.velocidade}',
+                      '${climate?.humidade}',
+                      Meteocons.windy,
+                      Meteocons.drizzle,
+                    )
                   ],
                 );
               } else {}
               return Container();
-            }));
+            }),
+      ),
+    ));
   }
 }

@@ -4,15 +4,17 @@ import 'package:http/http.dart' as http;
 
 class ClimateAPI {
   Future<Climate>? getCurrentClimate() async {
-    var endpoint = Uri.parse(
-        "http://dataservice.accuweather.com/forecasts/v1/daily/1day/33809?apikey=%09AiUOAgIXpJmfZLezNCYvPYRg6wmbaI94&language=pt-br&metric=true%20");
+    var endpoint =
+        "https://api.openweathermap.org/data/2.5/weather?lat=-18.9113&lon=-48.2622&appid=c8f6bb1d914cdecd2bc67b12c74ba3b4";
 
-    var response = await http.get(endpoint);
-    var body = jsonDecode(response.body);
+    var response = await http.get(Uri.parse(endpoint));
+    var body = json.decode(response.body);
 
     Climate climate = Climate.formateJson(body);
 
-    print(response.body);
+    print(climate.humidade);
+    print(climate.velocidade);
+    print(climate.temperatura);
     return Climate.formateJson(body);
   }
 }
