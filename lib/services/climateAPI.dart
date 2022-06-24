@@ -12,7 +12,7 @@ class ClimateAPI {
 
     Climate climate = Climate.formateJson(body);
 
-    print(climate.humidade);
+    print(climate.umidade);
     print(climate.velocidade);
     print(climate.temperatura);
     return Climate.formateJson(body);

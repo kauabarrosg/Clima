@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 Widget widgetTable(
-   String velocidade, String humidade, IconData iconS, IconData iconH) {
+   String velocidade, String umidade, IconData iconS, IconData iconH) {
   TextStyle textStyle =
       const TextStyle(fontSize: 19, fontWeight: FontWeight.bold,);
       TextStyle text =
@@ -35,8 +35,8 @@ Widget widgetTable(
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Text('Humidade', style: textStyle),
-                Text('${humidade}°', style: text),
+                Text('Umidade   ', style: textStyle),
+                Text('${umidade}°', style: text),
                 Icon(
                   iconH,
                   size: 35,

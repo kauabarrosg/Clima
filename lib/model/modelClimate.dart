@@ -1,16 +1,16 @@
 class Climate {
-  int? humidade;
+  int? umidade;
   double? velocidade;
   double? temperatura;
 
   Climate({
     this.velocidade,
-    this.humidade,
+    this.umidade,
     this.temperatura,
   });
 
   Climate.formateJson(Map<String, dynamic> json) {
-    humidade = json["main"]["humidity"];
+    umidade = json["main"]["humidity"];
     velocidade = json["wind"]["speed"];
     temperatura = json["main"]["temp"];
   }

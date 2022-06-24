@@ -49,7 +49,7 @@ class _MainScreenState extends State<MainScreen> {
                     ),
                     widgetTable(
                       '${climate?.velocidade}',
-                      '${climate?.humidade}',
+                      '${climate?.umidade}',
                       Meteocons.windy,
                       Meteocons.drizzle,
                     )
