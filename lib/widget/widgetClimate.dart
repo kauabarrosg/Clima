@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 Widget WidgetClimate(
-    IconData icon, String temperatura, String local,) {
+    IconData icon, String temperatura, String local, String informacao) {
   return Center(
       child: Column(
     children: [
@@ -27,6 +27,9 @@ Widget WidgetClimate(
           color: Colors.amber,
         ),
       ),
+      Text(
+        informacao
+        )
     ],
   ));
 }

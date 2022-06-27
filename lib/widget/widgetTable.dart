@@ -20,7 +20,7 @@ Widget widgetTable(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Text('Velocidade', style: textStyle),
-                Text('${velocidade}°', style: text),
+                Text('${velocidade}', style: text),
                 Icon(
                   iconS,
                   size: 35,
@@ -35,8 +35,8 @@ Widget widgetTable(
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Text('Umidade   ', style: textStyle),
-                Text('${umidade}°', style: text),
+                Text('Umidade  ', style: textStyle),
+                Text('${umidade}', style: text),
                 Icon(
                   iconH,
                   size: 35,
