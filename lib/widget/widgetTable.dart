@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:fluttericon/meteocons_icons.dart';
 
 Widget widgetTable(
-    String velocidade, String umidade, ) {
+  String velocidade,
+  String umidade,
+) {
   return Card(
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
     child: Container(
@@ -18,11 +20,9 @@ Widget widgetTable(
             children: [
               Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
                 Container(
-                  width: 45,
-                  height: 45,
-                  child: 
-                  Image.asset('assets/imagens/agua.png')
-                  ),
+                    width: 45,
+                    height: 45,
+                    child: Image.asset('assets/imagens/agua.png')),
                 Text(
                   'Umidade',
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
@@ -33,28 +33,24 @@ Widget widgetTable(
                 ),
                 SizedBox(height: 60),
                 Container(
-                  width: 45,
-                  height: 45,
-                  child: 
-                  Image.asset('assets/imagens/termometro.png')
-                  ),
+                    width: 45,
+                    height: 45,
+                    child: Image.asset('assets/imagens/termometro.png')),
                 Text(
                   'Sensação',
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
                 ),
                 Text(
-                  'Informação',
+                  '15°',
                   style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                 ),
               ]),
               SizedBox(height: 100),
               Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
                 Container(
-                  width: 45,
-                  height: 45,
-                  child: 
-                  Image.asset('assets/imagens/wind.png')
-                  ),
+                    width: 45,
+                    height: 45,
+                    child: Image.asset('assets/imagens/wind.png')),
                 Text(
                   'Vento',
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
@@ -65,17 +61,15 @@ Widget widgetTable(
                 ),
                 SizedBox(height: 60),
                 Container(
-                  width: 45,
-                  height: 45,
-                  child: 
-                  Image.asset('assets/imagens/visao.png')
-                  ),
+                    width: 45,
+                    height: 45,
+                    child: Image.asset('assets/imagens/visao.png')),
                 Text(
                   'Visibilidade',
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
                 ),
                 Text(
-                  'Informação',
+                  '5',
                   style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                 ),
               ]),
