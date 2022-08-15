@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:fluttericon/meteocons_icons.dart';
 
 Widget widgetTable(
   String velocidade,
   String umidade,
-  String visibilidade,
+  String descricao,
   String sensacao,
 ) {
   return Card(
@@ -65,11 +64,11 @@ Widget widgetTable(
                     height: 45,
                     child: Image.asset('assets/imagens/visao.png')),
                 Text(
-                  'Visibilidade',
+                  'Descrição',
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
                 ),
                 Text(
-                  visibilidade,
+                  descricao,
                   style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                 ),
               ]),

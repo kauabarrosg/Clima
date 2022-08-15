@@ -1,8 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:fluttericon/meteocons_icons.dart';
 import 'package:http/http.dart' as http;
-
 import '../widget/widgetClimate.dart';
 import '../widget/widgetTable.dart';
 
@@ -16,7 +14,6 @@ class Screen extends StatefulWidget {
 class _ScreenState extends State<Screen> {
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     this.getCurrentClimate();
   }
@@ -25,22 +22,22 @@ class _ScreenState extends State<Screen> {
   var local;
   var umidade;
   var velocidade;
-  var visibilidade;
+  var descricao;
   var sensacao;
 
   Future getCurrentClimate() async {
     var endpoint =
-        "https://api.openweathermap.org/data/2.5/weather?lat=-18.9113&lon=-48.2622&appid=c8f6bb1d914cdecd2bc67b12c74ba3b4";
+        "https://api.hgbrasil.com/weather?woeid=455917";
 
     http.Response response = await http.get(Uri.parse(endpoint));
     var body = jsonDecode(response.body);
     setState(() {
-      umidade = body["main"]["humidity"];
-      velocidade = body["wind"]["speed"];
-      temp = body["main"]["temp"];
-      visibilidade = body["visibility"];
-      sensacao = body["main"]["feels_like"];
-      local = body["name"];
+      umidade = body["results"]["humidity"];
+      velocidade = body["results"]["wind_speedy"];
+      temp = body["results"]["temp"];
+      descricao = body["results"]["description"];
+      sensacao = body["results"]["temp"];
+      local = body["results"]["city"];
     });
     print(response.body);
   }
@@ -59,17 +56,17 @@ class _ScreenState extends State<Screen> {
                     height: MediaQuery.of(context).size.height * 0.02,
                   ),
                   WidgetClimate(
-                    temp != null ? '${temp.toString()}' : '...',
-                    local != null ? '${local.toString()}' : '...',
+                    temp != null ? temp.toString() : '...',
+                    local != null ? local.toString() : '...',
                   ),
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.03,
                   ),
                   widgetTable(
-                    velocidade != null ? '${velocidade.toString()}' : '...',
-                    umidade != null ? '${umidade.toString()}' : '...',
-                    visibilidade != null ? '${visibilidade.toString()}' : '...',
-                    sensacao != null ? '${sensacao.toString()}' : '...',
+                    velocidade != null ? velocidade.toString() : '...',
+                    umidade != null ? umidade.toString() : '...',
+                    descricao != null ? descricao.toString() : '...',
+                    sensacao != null ? sensacao.toString() : '...',
                   )
                 ],
               ),

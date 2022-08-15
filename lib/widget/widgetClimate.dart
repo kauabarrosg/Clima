@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fluttericon/meteocons_icons.dart';
 import 'package:intl/intl.dart';
 
 Widget WidgetClimate(
@@ -23,7 +22,7 @@ Widget WidgetClimate(
               Row(
                 children: [
                   Text(
-                    '15°',
+                    temperatura,
                     style: TextStyle(fontSize: 64, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(width: 100),
