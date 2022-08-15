@@ -24,6 +24,8 @@ class _ScreenState extends State<Screen> {
   var temp;
   var umidade;
   var velocidade;
+  var visibilidade;
+  var sensacao;
 
   Future getCurrentClimate() async {
     var endpoint =
@@ -35,8 +37,10 @@ class _ScreenState extends State<Screen> {
       umidade = body["main"]["humidity"];
       velocidade = body["wind"]["speed"];
       temp = body["main"]["temp"];
+      visibilidade = body["visibility"];
+      sensacao = body["main"]["feels_like"];
     });
-
+    print(response.body);
   }
 
   @override
@@ -54,7 +58,7 @@ class _ScreenState extends State<Screen> {
                   ),
                   WidgetClimate(
                     temp != null ? '${temp.toString()}' : '...',
-                    'Uberlândia',             
+                    'Uberlândia',
                   ),
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.03,
@@ -62,7 +66,8 @@ class _ScreenState extends State<Screen> {
                   widgetTable(
                     velocidade != null ? '${velocidade.toString()}' : '...',
                     umidade != null ? '${umidade.toString()}' : '...',
-  
+                    visibilidade != null ? '${visibilidade.toString()}' : '...',
+                    sensacao != null ? '${sensacao.toString()}' : '...',
                   )
                 ],
               ),

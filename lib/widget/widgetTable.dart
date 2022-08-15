@@ -6,6 +6,8 @@ import 'package:fluttericon/meteocons_icons.dart';
 Widget widgetTable(
   String velocidade,
   String umidade,
+  String visibilidade,
+  String sensacao,
 ) {
   return Card(
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
@@ -41,7 +43,7 @@ Widget widgetTable(
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
                 ),
                 Text(
-                  '15°',
+                 sensacao,
                   style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                 ),
               ]),
@@ -69,7 +71,7 @@ Widget widgetTable(
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
                 ),
                 Text(
-                  '5',
+                  visibilidade,
                   style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                 ),
               ]),

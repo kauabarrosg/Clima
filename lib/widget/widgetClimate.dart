@@ -3,7 +3,9 @@ import 'package:fluttericon/meteocons_icons.dart';
 import 'package:intl/intl.dart';
 
 Widget WidgetClimate(
-   String temperatura, String local,) {
+  String temperatura,
+  String local,
+) {
   return Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       child: Container(
@@ -19,21 +21,19 @@ Widget WidgetClimate(
                 DateFormat.MMMMd().format(DateTime.now()),
               ),
               Row(
-                children:[
+                children: [
                   Text(
                     '15°',
                     style: TextStyle(fontSize: 64, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(width: 100),
                   Container(
-                  width: 78,
-                  height: 78,
-                  child: 
-                  Image.asset('assets/imagens/nuvem.png')
-                  ),
+                      width: 78,
+                      height: 78,
+                      child: Image.asset('assets/imagens/nuvem.png')),
                 ],
               ),
-               Text(
+              Text(
                 local,
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
