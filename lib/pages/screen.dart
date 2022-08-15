@@ -22,6 +22,7 @@ class _ScreenState extends State<Screen> {
   }
 
   var temp;
+  var local;
   var umidade;
   var velocidade;
   var visibilidade;
@@ -39,6 +40,7 @@ class _ScreenState extends State<Screen> {
       temp = body["main"]["temp"];
       visibilidade = body["visibility"];
       sensacao = body["main"]["feels_like"];
+      local = body["name"];
     });
     print(response.body);
   }
@@ -58,7 +60,7 @@ class _ScreenState extends State<Screen> {
                   ),
                   WidgetClimate(
                     temp != null ? '${temp.toString()}' : '...',
-                    'Uberlândia',
+                    local != null ? '${local.toString()}' : '...',
                   ),
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.03,
