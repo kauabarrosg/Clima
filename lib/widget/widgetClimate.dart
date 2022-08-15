@@ -25,10 +25,12 @@ Widget WidgetClimate(
                     style: TextStyle(fontSize: 64, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(width: 100),
-                  Icon(
-                    Meteocons.cloud,
-                    size: 78,
-                  )
+                  Container(
+                  width: 78,
+                  height: 78,
+                  child: 
+                  Image.asset('assets/imagens/nuvem.png')
+                  ),
                 ],
               ),
                Text(
