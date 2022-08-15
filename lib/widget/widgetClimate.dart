@@ -1,35 +1,42 @@
 import 'package:flutter/material.dart';
+import 'package:fluttericon/meteocons_icons.dart';
 import 'package:intl/intl.dart';
 
 Widget WidgetClimate(
-    IconData icon, String temperatura, String local, String informacao) {
-  return Center(
-      child: Column(
-    children: [
-      Text(
-        local,
-        style: const TextStyle(
-          fontSize: 25,
-          fontWeight: FontWeight.w600,
+   String temperatura, String local,) {
+  return Card(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+      child: Container(
+        width: 340,
+        height: 200,
+        child: Padding(
+          padding: const EdgeInsets.only(left: 25),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                DateFormat.MMMMd().format(DateTime.now()),
+              ),
+              Row(
+                children:[
+                  Text(
+                    '15°',
+                    style: TextStyle(fontSize: 64, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(width: 100),
+                  Icon(
+                    Meteocons.cloud,
+                    size: 78,
+                  )
+                ],
+              ),
+               Text(
+                local,
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              ),
+            ],
+          ),
         ),
-      ),
-      Text(DateFormat.MMMd().format(DateTime.now())),
-      SizedBox(height: 30),
-      Icon(
-        icon,
-        size: 55,
-      ),
-      Text(
-        '${temperatura}°',
-        style: const TextStyle(
-          fontSize: 60,
-          fontWeight: FontWeight.bold,
-          color: Colors.amber,
-        ),
-      ),
-      Text(
-        informacao
-        )
-    ],
-  ));
+      ));
 }

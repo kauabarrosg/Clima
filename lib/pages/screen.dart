@@ -36,6 +36,7 @@ class _ScreenState extends State<Screen> {
       velocidade = body["wind"]["speed"];
       temp = body["main"]["temp"];
     });
+
   }
 
   @override
@@ -49,22 +50,19 @@ class _ScreenState extends State<Screen> {
               child: Column(
                 children: [
                   SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.2,
+                    height: MediaQuery.of(context).size.height * 0.02,
                   ),
                   WidgetClimate(
-                    Meteocons.cloud_sun,
                     temp != null ? '${temp.toString()}' : '...',
-                    'Uberlândia',
-                    'Dados em fahrenheit',
+                    'Uberlândia',             
                   ),
                   SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.3,
+                    height: MediaQuery.of(context).size.height * 0.03,
                   ),
                   widgetTable(
                     velocidade != null ? '${velocidade.toString()}' : '...',
                     umidade != null ? '${umidade.toString()}' : '...',
-                    Meteocons.windy,
-                    Meteocons.drizzle,
+  
                   )
                 ],
               ),
