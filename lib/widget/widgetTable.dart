@@ -9,7 +9,7 @@ Widget widgetTable(
   return Card(
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
     child: Container(
-      width: 340,
+      width: 390,
       height: 340,
       child: Padding(
         padding: const EdgeInsets.only(top: 30),
@@ -40,7 +40,7 @@ Widget widgetTable(
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
                 ),
                 Text(
-                 sensacao,
+                 '$sensacao°',
                   style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                 ),
               ]),
@@ -62,7 +62,7 @@ Widget widgetTable(
                 Container(
                     width: 45,
                     height: 45,
-                    child: Image.asset('assets/imagens/visao.png')),
+                    child: Image.asset('assets/imagens/clima.png')),
                 Text(
                   'Descrição',
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),

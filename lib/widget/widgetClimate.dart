@@ -8,7 +8,7 @@ Widget WidgetClimate(
   return Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       child: Container(
-        width: 340,
+        width: 390,
         height: 200,
         child: Padding(
           padding: const EdgeInsets.only(left: 25),
@@ -22,10 +22,10 @@ Widget WidgetClimate(
               Row(
                 children: [
                   Text(
-                    temperatura,
+                    '$temperatura°',
                     style: TextStyle(fontSize: 64, fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(width: 100),
+                  SizedBox(width: 150),
                   Container(
                       width: 78,
                       height: 78,

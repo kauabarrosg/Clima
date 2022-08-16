@@ -42,9 +42,29 @@ class _ScreenState extends State<Screen> {
     print(response.body);
   }
 
+  _AppBar(){
+    return AppBar(
+      backgroundColor: Color(0xff2E2E2E),
+      elevation: 0,
+      centerTitle: true,
+        title: Text(
+          'Clima',
+          style: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+            color: Colors.white
+          ),
+          ) 
+      );
+  }
+
   @override
   Widget build(BuildContext context) {
+
+    AppBar(); 
     return Scaffold(
+      backgroundColor: Color(0xff2E2E2E),
+      appBar: _AppBar(),
         body: Center(
       child: SingleChildScrollView(
         child: Padding(
